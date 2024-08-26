@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIF</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container{
+            background: #fff;
+            background-image: url(panda);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+        h2{
+            text-align: center;
+        }
+        .section{
+            margin: bottom 20px;
+        }
+        h3{
+            margin-bottom: 10px;
+        }
+        label{
+            margin-top: 10px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="radio"] {
+            width: 100% - 20px;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"]{
+            width: auto;
+        }
+        button{
+            padding: 10px;
+            background-color: bisque;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: cadetblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <h2>Personal information Form</h2><hr>
+                <div class="section">
+                    <label for="first-name">Name</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="FirstName">
+                    <input type="text" id="last-name" name="last-name" placeholder="LastName">
+                    <br>
+                    <label for="dob">Date Of Birth</label>
+                    <input type="text" id="dob" name="DOB" placeholder="dd-mm-yyyy">
+                    <br>
+                    <label>Gender</label>
+                    <input type="radio" id="male" name="Gender" value="male" placeholder="Male">
+                    <input type="radio" id="female" name="Gender" value="female">
+                    <input type="radio" id="other" name="Gender" value="other">
+                    <br>
+                    <label for="marital-status">Marital Status</label>
+                    <input type="text" id ="marital-status" name="marital-status">
+                    <br>
+                    <label for="nationality">Nationality</label>
+                    <input type="text" id="nationality" name="nationality">
+                </div>
+                <div class="section">
+                    <h3>Address</h3>
+                    <label for="street-address">Street Address</label>
+                    <input type="text" id="street-address" name="street-address">
+                    <br>
+                    <label for="address-line2">Address Line 2</label>
+                    <input type="text" id="city" name="city">
+                    <br>
+                    <label for="state">State Or Region</label>
+                    <input type="text" id="state" name="state">
+                    <br>
+                    <label for="postal-code">Postal/Zip Code</label>
+                    <input type="text" id="postal-code" name="postal-code">
+                    <br>
+                    <label for="country">Country</label>
+                    <input type="text" id="country" name="country">
+                </div>
+                <div class="section">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email"><br>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

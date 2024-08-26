@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle theme</title>
+    <style>
+        body{
+            background-color: wheat;
+            color: black;
+        }
+        .dark-theme{
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Dark mode javascript plugin</h1>
+    <p>Theme color switch is a quick implementation of the popular Dark Mode on your web app.</p>
+    <button id="Toggle-theme">switch theme</button>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded" ,function(){
+        const button=document.getElementById("Toggle-theme");
+        button.addEventListener("click",function(){
+            document.body.classList.toggle("dark-theme");
+        })
+    })
+</script>
+</html>

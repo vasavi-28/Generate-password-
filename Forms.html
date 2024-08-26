@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body{
+            display: flex;
+            margin: 0;
+            padding: 20 Px;
+        }
+        .container{
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .form-group{
+            margin-bottom: 15px;
+        }
+        label{
+            float: inline-start;
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],input[type="email"],select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+        input[type="text"] , input[type="email"]{
+            outline: none;
+        }
+        :required{
+            color : red;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="fullname">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>  
+            <div class="form-group">
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country <span class="required">*</span></label>
+                <select id="country" name="country" required>
+                    <option value="">select</option>
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="South Africa">South Africa</option>
+                    <option value="Brazil">Brazil</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="state">State <span class="required">*</span></label>
+                <select id="state" name="state" required>
+                    <option value="">Select State</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip <span class="required">*</span></label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+            </div>
+        </form>
+    </div>
+<script>
+    const countries = ["India", "USA" , "Mexico" , "South Africa" , "Brazil" ];
+    const states = [["AP","TS","Kerala","Goa","TN",],["California" , "Texas" , "Florida" , "New York", "Illinois"],["Jalisco","Nuevo Leon" , "Mexico City" , "Puebla" , "Guanajuato"],["Gauteng" , "KwaZulu-Naal" , "Western Cape" , "Eastern Cape" , "Limpopo"],["Sao Paulo","Rio de Janeiro" , "Minas Gerais" , "Bahia" , "Parana"]];
+    document.getElementById('country').addEventListener('change',function(){
+        const countryIndex = countries.indexOf(this.value);
+        const stateSelect = document.getElementById('state');
+        stateSelect.innerHTML= '<option value="">Select state</option>';
+        if (countryIndex > -1) {
+            states[countryIndex].forEach(state => {
+                const option = document.createElement('option');
+                option.value=state;
+                option.textContent=state;
+                stateSelect.appendChild(option);
+            })
+        }
+    }); 
+</script>
+</body>
+</html>
